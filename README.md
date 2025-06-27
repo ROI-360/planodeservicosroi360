@@ -13,9 +13,6 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-                    body > :first-child {
-  display: none;
-}
         .chart-container {
             position: relative;
             width: 100%;
