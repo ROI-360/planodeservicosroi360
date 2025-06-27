@@ -88,13 +88,13 @@
 </head>
 <body class="bg-[#1A202C] text-gray-200">
 
-    <main class="container mx-auto p-4 md:p-8">
+    <main class="container mx-auto p-4 md:p-8 bg-[#1A202C]">
 
-        <header class="text-center py-8">
+        <header class="text-center py-8 bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h1 class="text-5xl md:text-7xl font-bold text-[#4CAF50] leading-tight mb-4 title-shadow">Prestação de Serviços da ROI-360</h1>
                 <p class="text-xl md:text-2xl text-white max-w-4xl mx-auto mb-4 title-shadow">
-                    **Desvende o segredo dos salões de elite!** Conquiste uma agenda cheia e um faturamento que você sempre sonhou, transformando seu investimento em **lucro real**.
+                    <b>Desvende o segredo dos salões de elite!</b> Conquiste uma agenda cheia e um faturamento que você sempre sonhou, transformando seu investimento em <b>lucro real</b>.
                 </p>
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 title-shadow">Transforme Cliques em Clientes</h1>
                 <p class="text-lg md:text-xl text-white max-w-3xl mx-auto mb-4 title-shadow">
@@ -112,7 +112,7 @@
             </div>
         </header>
 
-        <section class="py-8">
+        <section class="py-8 bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h2 class="text-3xl font-bold text-[#4CAF50] mb-4 title-shadow">1° Visão 360° do Sucesso</h2>
                 <p class="text-white mt-2 max-w-2xl mx-auto mb-8 title-shadow">Tudo começa com uma fundação sólida. Entendemos seu negócio a fundo para criar campanhas que realmente funcionam.</p>
@@ -142,7 +142,7 @@
             </div>
         </section>
 
-        <section class="py-8">
+        <section class="py-8 bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h2 class="text-3xl font-bold text-[#4CAF50] mb-4 px-4 title-shadow">2° Aceleração Digital</h2>
                 <p class="text-white mt-2 max-w-2xl mx-auto mb-8 px-4 title-shadow">Criamos anúncios que não apenas alcançam, mas encantam e convertem seu público-alvo.</p>
@@ -166,14 +166,14 @@
             </div>
         </section>
 
-        <section class="py-8">
+        <section class="py-8 bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h2 class="text-3xl font-bold text-[#4CAF50] mb-4 title-shadow">3° Performance em Evolução</h2>
                 <p class="text-white mt-2 max-w-2xl mx-auto mb-8 title-shadow">Nosso trabalho não para. Monitoramos e ajustamos suas campanhas semanalmente para reduzir custos e maximizar resultados.</p>
             
                 <div class="rounded-xl strong-shadow-box md:col-span-2 p-6">
                     <h3 class="text-xl font-semibold text-white text-center mb-4 title-shadow">Otimização Inteligente: Seu Lucro Garantido!</h3>
-                    <p class="text-white text-center text-sm mb-4 title-shadow">Nossa estratégia foca em **reduzir drasticamente seu custo de aquisição por cliente**, transformando cada investimento em um lucro maior para o seu salão. Veja como a otimização contínua impacta seu bolso:</p>
+                    <p class="text-white text-center text-sm mb-4 title-shadow">Nossa estratégia foca em <b>reduzir drasticamente seu custo de aquisição por cliente</b>, transformando cada investimento em um lucro maior para o seu salão. Veja como a otimização contínua impacta seu bolso:</p>
                     <div class="chart-container" style="max-width: 800px;">
                         <canvas id="optimizationChart"></canvas>
                     </div>
@@ -181,7 +181,7 @@
             </div>
         </section>
 
-        <section class="py-8">
+        <section class="py-8 bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h2 class="text-3xl font-bold text-[#4CAF50] mb-4 title-shadow">4° Alcance Direto e Visibilidade</h2>
                 <p class="text-white mt-2 max-w-2xl mx-auto mb-8 title-shadow">Potencialize sua agenda e seguidores com campanhas focadas em conexão e crescimento para seu salão.</p>
@@ -201,8 +201,7 @@
             </div>
         </section>
 
-
-        <section class="py-8 text-center">
+        <section class="py-8 text-center bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h2 class="text-3xl font-bold text-[#4CAF50] mb-8 title-shadow">Seu Investimento Transparente</h2>
                 <p class="text-white mt-2 max-w-2xl mx-auto mb-8 title-shadow">Clareza e controle total sobre seus custos.</p>
@@ -220,7 +219,7 @@
                             APENAS R$ 1.500/mês
                         </p>
                         <p class="text-lg text-white mt-1 title-shadow">
-                            Válido para fechamentos **SOMENTE EM 27/06/2024!**
+                            Válido para fechamentos <b>SOMENTE EM 27/06/2024!</b>
                         </p>
                     </div>
                     <div class="p-8 rounded-lg strong-shadow-box flex-1 min-w-[300px]">
@@ -232,7 +231,7 @@
             </div>
         </section>
         
-        <section class="py-8">
+        <section class="py-8 bg-[#1A202C]">
              <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                  <h2 class="text-3xl font-bold text-[#4CAF50] mb-12 title-shadow">Estratégias Adicionais Inclusas</h2>
                  <p class="text-white mt-2 max-w-2xl mx-auto mb-8 title-shadow">Vamos além do tráfego pago, fortalecendo sua marca como um todo.</p>
@@ -257,7 +256,7 @@
              </div>
         </section>
 
-        <section class="py-8">
+        <section class="py-8 bg-[#1A202C]">
             <div class="section-gradient-box p-8 max-w-4xl">
                 <h2 class="text-4xl font-bold text-[#4CAF50] mb-4 flex items-center justify-center title-shadow">
                     <span class="icon-highlight mr-4">🎁</span> Bônus Especial
@@ -498,5 +497,3 @@
     </script>
 </body>
 </html>
-
-
