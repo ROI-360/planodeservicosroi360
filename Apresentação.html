@@ -94,7 +94,7 @@
             <div class="section-gradient-box p-8 max-w-4xl pdf-page-break-after">
                 <h1 class="text-5xl md:text-7xl font-bold text-[#4CAF50] leading-tight mb-4 title-shadow">Prestação de Serviços da ROI-360</h1>
                 <p class="text-xl md:text-2xl text-white max-w-4xl mx-auto mb-4 title-shadow">
-                    **Desvende o segredo dos salões de elite!** Conquiste uma agenda cheia e um faturamento que você sempre sonhou, transformando seu investimento em **lucro real**.
+                    <strong>Desvende o segredo dos salões de elite!</strong> Conquiste uma agenda cheia e um faturamento que você sempre sonhou, transformando seu investimento em <strong>lucro real</strong>.
                 </p>
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 title-shadow">Transforme Cliques em Clientes</h1>
                 <p class="text-lg md:text-xl text-white max-w-3xl mx-auto mb-4 title-shadow">
@@ -147,7 +147,7 @@
                 <h2 class="text-3xl font-bold text-[#4CAF50] mb-4 px-4 title-shadow">2° Aceleração Digital</h2>
                 <p class="text-white mt-2 max-w-2xl mx-auto mb-8 px-4 title-shadow">Criamos anúncios que não apenas alcançam, mas encantam e convertem seu público-alvo.</p>
             
-                <div class="grid grid-cols-2 gap-6 items-center px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-4">
                     <div class="p-6 rounded-xl strong-shadow-box">
                         <h3 class="text-xl font-semibold text-white text-center mb-4 title-shadow">Eficácia por Formato de Anúncio</h3>
                         <p class="text-white text-center text-sm mb-4 title-shadow">Analisamos e priorizamos os formatos que mais geram agendamentos para salões, como vídeos de transformação e carrosséis de resultados.</p>
@@ -173,7 +173,7 @@
             
                 <div class="rounded-xl strong-shadow-box md:col-span-2 p-6">
                     <h3 class="text-xl font-semibold text-white text-center mb-4 title-shadow">Otimização Inteligente: Seu Lucro Garantido!</h3>
-                    <p class="text-white text-center text-sm mb-4 title-shadow">Nossa estratégia foca em **reduzir drasticamente seu custo de aquisição por cliente**, transformando cada investimento em um lucro maior para o seu salão. Veja como a otimização contínua impacta seu bolso:</p>
+                    <p class="text-white text-center text-sm mb-4 title-shadow">Nossa estratégia foca em <strong>reduzir drasticamente seu custo de aquisição por cliente</strong>, transformando cada investimento em um lucro maior para o seu salão. Veja como a otimização contínua impacta seu bolso:</p>
                     <div class="chart-container" style="max-width: 800px;">
                         <canvas id="optimizationChart"></canvas>
                     </div>
@@ -220,7 +220,7 @@
                             APENAS R$ 1.500/mês
                         </p>
                         <p class="text-lg text-white mt-1 title-shadow">
-                            Válido para fechamentos **SOMENTE EM 27/06/2024!**
+                            Válido para fechamentos <strong>SOMENTE EM 27/06/2024!</strong>
                         </p>
                     </div>
                     <div class="p-8 rounded-lg strong-shadow-box flex-1 min-w-[300px]">
@@ -289,7 +289,22 @@
     </main>
 
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
+        // Garantir que o Chart.js e o plugin DataLabels estejam carregados
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar se Chart e ChartDataLabels estão disponíveis
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js não foi carregado corretamente');
+                return;
+            }
+            
+            if (typeof ChartDataLabels === 'undefined') {
+                console.error('Chart.js DataLabels plugin não foi carregado corretamente');
+                return;
+            }
+            
+            // Registrar o plugin DataLabels
+            Chart.register(ChartDataLabels);
+            
             function wrapLabels(label, maxWidth) {
                 const words = label.split(' ');
                 const lines = [];
@@ -371,129 +386,140 @@
                 }
             };
 
-            Chart.register(ChartDataLabels);
-
-            const adFormatCtx = document.getElementById('adFormatChart').getContext('2d');
-            new Chart(adFormatCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Vídeo de Transformação', 'Antes e Depois', 'Carrossel de Resultados', wrapLabels('Depoimento de Cliente', 16), 'Imagem Única'],
-                    datasets: [{
-                        label: 'Nível de Engajamento',
-                        data: [95, 92, 85, 88, 70],
-                        backgroundColor: ['#4CAF50', '#7FFF00', '#00FFFF', '#FFD700', '#FF4500'],
-                        borderColor: '#1A202C',
-                        borderWidth: 2,
-                        borderRadius: 5
-                    }]
-                },
-                options: {
-                    ...commonChartOptions,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { enabled: false },
-                        datalabels: {
-                            anchor: 'end',
-                            align: 'top',
-                            color: '#FFFFFF',
-                            textShadowBlur: 5,
-                            textShadowColor: 'rgba(0, 0, 0, 0.9)'
-                        }
-                    },
-                    scales: {
-                        x: {
-                            grid: {
-                                display: false
+            try {
+                // Criar gráfico de formato de anúncios
+                const adFormatCtx = document.getElementById('adFormatChart').getContext('2d');
+                if (adFormatCtx) {
+                    new Chart(adFormatCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Vídeo de Transformação', 'Antes e Depois', 'Carrossel de Resultados', wrapLabels('Depoimento de Cliente', 16), 'Imagem Única'],
+                            datasets: [{
+                                label: 'Nível de Engajamento',
+                                data: [95, 92, 85, 88, 70],
+                                backgroundColor: ['#4CAF50', '#7FFF00', '#00FFFF', '#FFD700', '#FF4500'],
+                                borderColor: '#1A202C',
+                                borderWidth: 2,
+                                borderRadius: 5
+                            }]
+                        },
+                        options: {
+                            ...commonChartOptions,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: { enabled: false },
+                                datalabels: {
+                                    anchor: 'end',
+                                    align: 'top',
+                                    color: '#FFFFFF',
+                                    textShadowBlur: 5,
+                                    textShadowColor: 'rgba(0, 0, 0, 0.9)'
+                                }
                             },
-                            ticks: {
-                                color: '#FFFFFF',
-                                autoSkip: false,
-                                maxRotation: 45,
-                                minRotation: 45,
-                                font: {
-                                    size: 10
+                            scales: {
+                                x: {
+                                    grid: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        color: '#FFFFFF',
+                                        autoSkip: false,
+                                        maxRotation: 45,
+                                        minRotation: 45,
+                                        font: {
+                                            size: 10
+                                        }
+                                    }
+                                },
+                                y: commonChartOptions.scales.y
+                            }
+                        }
+                    });
+                }
+                
+                // Criar gráfico de investimento
+                const investmentCtx = document.getElementById('investmentChart').getContext('2d');
+                if (investmentCtx) {
+                    new Chart(investmentCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Orçamento de Anúncios (Facebook/Instagram)', 'Gestão e Otimização ROI-360'],
+                            datasets: [{
+                                label: 'Investimento Médio',
+                                data: [750, 1900],
+                                backgroundColor: ['#32CD32', '#FFD700'],
+                                borderColor: '#2D3748',
+                                borderWidth: 4,
+                            }]
+                        },
+                        options: {
+                            maintainAspectRatio: false,
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        color: '#FFFFFF',
+                                        font: { size: 12 },
+                                        boxWidth: 20
+                                    }
+                                },
+                                tooltip: { enabled: false },
+                                datalabels: {
+                                    formatter: (value, context) => {
+                                        const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                        const percentage = Math.round((value / total) * 100);
+                                        return percentage > 5 ? percentage + '%' : '';
+                                    },
+                                    color: '#FFFFFF',
+                                    textShadowBlur: 5,
+                                    textShadowColor: 'rgba(0, 0, 0, 0.9)'
                                 }
                             }
-                        },
-                        y: commonChartOptions.scales.y
-                    }
+                        }
+                    });
                 }
-            });
-
-            const investmentCtx = document.getElementById('investmentChart').getContext('2d');
-            new Chart(investmentCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Orçamento de Anúncios (Facebook/Instagram)', 'Gestão e Otimização ROI-360'],
-                    datasets: [{
-                        label: 'Investimento Médio',
-                        data: [750, 1900],
-                        backgroundColor: ['#32CD32', '#FFD700'],
-                        borderColor: '#2D3748',
-                        borderWidth: 4,
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#FFFFFF',
-                                font: { size: 12 },
-                                boxWidth: 20
+                
+                // Criar gráfico de otimização
+                const optimizationCtx = document.getElementById('optimizationChart').getContext('2d');
+                if (optimizationCtx) {
+                    new Chart(optimizationCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Mês 1', 'Mês 2', 'Mês 3', 'Mês 4'],
+                            datasets: [{
+                                label: 'Custo de Clientes (R$)',
+                                data: [10.00, 5.00, 2.00, 0.65],
+                                fill: true,
+                                backgroundColor: 'rgba(78, 205, 196, 0.2)',
+                                borderColor: '#4ECDC4',
+                                tension: 0.3,
+                                pointBackgroundColor: '#FFFFFF',
+                                pointBorderColor: '#4ECDC4',
+                                pointHoverRadius: 7,
+                                pointRadius: 5,
+                            }]
+                        },
+                        options: {
+                            ...commonChartOptions,
+                            plugins: {
+                                legend: { display: true },
+                                tooltip: { enabled: false },
+                                datalabels: {
+                                    align: 'end',
+                                    anchor: 'end',
+                                    formatter: (value) => `R$ ${value.toFixed(2)}`,
+                                    color: '#FFFFFF',
+                                    textShadowBlur: 5,
+                                    textShadowColor: 'rgba(0, 0, 0, 0.9)'
+                                }
                             }
-                        },
-                        tooltip: { enabled: false },
-                        datalabels: {
-                            formatter: (value, context) => {
-                                const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                                const percentage = Math.round((value / total) * 100);
-                                return percentage > 5 ? percentage + '%' : '';
-                            },
-                            color: '#FFFFFF',
-                            textShadowBlur: 5,
-                            textShadowColor: 'rgba(0, 0, 0, 0.9)'
                         }
-                    }
+                    });
                 }
-            });
-
-            const optimizationCtx = document.getElementById('optimizationChart').getContext('2d');
-            new Chart(optimizationCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Mês 1', 'Mês 2', 'Mês 3', 'Mês 4'],
-                    datasets: [{
-                        label: 'Custo de Clientes (R$)',
-                        data: [10.00, 5.00, 2.00, 0.65], /* Dados ajustados */
-                        fill: true,
-                        backgroundColor: 'rgba(78, 205, 196, 0.2)',
-                        borderColor: '#4ECDC4',
-                        tension: 0.3,
-                        pointBackgroundColor: '#FFFFFF',
-                        pointBorderColor: '#4ECDC4',
-                        pointHoverRadius: 7,
-                        pointRadius: 5,
-                    }]
-                },
-                options: {
-                    ...commonChartOptions,
-                    plugins: {
-                        legend: { display: true },
-                        tooltip: { enabled: false },
-                        datalabels: {
-                            align: 'end',
-                            anchor: 'end',
-                            formatter: (value) => `R$ ${value.toFixed(2)}`,
-                            color: '#FFFFFF',
-                            textShadowBlur: 5,
-                            textShadowColor: 'rgba(0, 0, 0, 0.9)'
-                        }
-                    }
-                }
-            });
+            } catch (error) {
+                console.error('Erro ao inicializar gráficos:', error);
+            }
         });
     </script>
 </body>
