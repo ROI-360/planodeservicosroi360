@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-        body > :first-child {
-  display: none;
-}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +13,9 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+                    body > :first-child {
+  display: none;
+}
         .chart-container {
             position: relative;
             width: 100%;
